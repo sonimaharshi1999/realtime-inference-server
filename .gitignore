@@ -1,0 +1,36 @@
+# Byte-compiled / optimised
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model artefacts (re-trainable from synthetic data)
+models/*.joblib
+models/*.onnx
+
+# Pytest / coverage
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Environment variables
+.env

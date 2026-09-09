@@ -1,0 +1,11 @@
+[project]
+name = "realtime-inference-server"
+version = "1.0.0"
+description = "Real-Time ML Inference Server with FastAPI, WebSockets, and A/B testing"
+authors = [{name = "Maharshi Soni"}]
+license = {text = "MIT"}
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
