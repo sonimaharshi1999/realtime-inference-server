@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-Time ML Inference Server — Project Report</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .header { background: linear-gradient(135deg, #1e293b, #334155); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; border: 1px solid #475569; }
+  .header h1 { font-size: 1.8rem; color: #f8fafc; margin-bottom: 0.5rem; }
+  .header .meta { color: #94a3b8; font-size: 0.9rem; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }
+  .card h2 { color: #f1f5f9; font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+  .badge { display: inline-block; background: #3b82f6; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; margin: 2px; }
+  ul { list-style: none; padding-left: 0; }
+  ul li { padding: 4px 0; padding-left: 1.2rem; position: relative; }
+  ul li::before { content: "▸"; position: absolute; left: 0; color: #60a5fa; }
+  .test-output { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1rem; font-family: 'Cascadia Code', monospace; font-size: 0.8rem; max-height: 300px; overflow-y: auto; white-space: pre-wrap; color: #cbd5e1; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+  .stat { text-align: center; padding: 1rem; background: #0f172a; border-radius: 8px; }
+  .stat .num { font-size: 2rem; font-weight: bold; color: #f8fafc; }
+  .stat .label { color: #94a3b8; font-size: 0.85rem; }
+  .footer { text-align: center; color: #64748b; font-size: 0.8rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #1e293b; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Real-Time ML Inference Server</h1>
+    <div class="meta">
+      Maharshi Soni &middot; model-serving &middot; advanced
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Description</h2>
+    <p>FastAPI + WebSocket real-time ML inference server with batched prediction, model hot-reloading, A/B testing, health monitoring, and in-memory feature cache.</p>
+  </div>
+
+  <div class="card">
+    <h2>Tech Stack</h2>
+    <span class="badge">fastapi</span><span class="badge">uvicorn</span><span class="badge">websockets</span><span class="badge">scikit-learn</span><span class="badge">numpy</span><span class="badge">pydantic</span><span class="badge">httpx</span><span class="badge">pytest</span>
+  </div>
+
+  <div class="card">
+    <h2>Features</h2>
+    <ul><li>WebSocket streaming predictions</li><li>REST batch inference</li><li>Model hot-reloading</li><li>A/B testing</li><li>Feature cache with TTL</li><li>Health monitoring</li></ul>
+  </div>
+
+  <div class="card" style="border-left: 3px solid #3b82f6;">
+    <h2>Sample Input</h2>
+    <p>Feature vectors</p>
+    <div class="test-output" style="margin-top:0.8rem">curl -X POST /predict -d '{"features": [1.2, 3.4, 5.6]}'</div>
+  </div>
+
+  <div class="card" style="border-left: 3px solid #22c55e;">
+    <h2>Sample Output</h2>
+    <p>Predictions with metadata</p>
+    <div class="test-output" style="margin-top:0.8rem">{"prediction": 1, "probability": 0.87, "model": "v2"}</div>
+  </div>
+
+  <div class="card">
+    <h2>Project Structure</h2>
+    <ul><li><code>.gitignore</code></li><li><code>main.py</code></li><li><code>project-idea.json</code></li><li><code>pyproject.toml</code></li><li><code>README.md</code></li><li><code>requirements.txt</code></li><li><code>.github/workflows/test.yml</code></li><li><code>models/challenger_model.joblib</code></li><li><code>models/demo_model.joblib</code></li><li><code>src/ab_testing.py</code></li><li><code>src/batch_queue.py</code></li><li><code>src/cache.py</code></li><li><code>src/config.py</code></li><li><code>src/model_registry.py</code></li><li><code>src/monitoring.py</code></li><li><code>src/schemas.py</code></li><li><code>src/server.py</code></li><li><code>src/train.py</code></li><li><code>src/__init__.py</code></li><li><code>tests/conftest.py</code></li><li><code>tests/test_ab_testing.py</code></li><li><code>tests/test_cache.py</code></li><li><code>tests/test_model_registry.py</code></li><li><code>tests/test_monitoring.py</code></li><li><code>tests/test_server.py</code></li><li><code>tests/__init__.py</code></li></ul>
+  </div>
+
+  <div class="card">
+    <h2>Test Results</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">31</div><div class="label">Total</div></div>
+      <div class="stat"><div class="num" style="color:#22c55e">31</div><div class="label">Passed</div></div>
+      <div class="stat"><div class="num" style="color:#ef4444">0</div><div class="label">Failed</div></div>
+    </div>
+    <p style="font-size:1.5rem;font-weight:bold;color:#22c55e">PASSED</p>
+  </div>
+
+  <div class="footer">
+    Maharshi Soni &middot; MIT License
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+======================================================================
+  Real-Time ML Inference Server
+======================================================================
+
+Author: Maharshi Soni
+Category: model-serving
+Difficulty: advanced
+
+----------------------------------------------------------------------
+DESCRIPTION
+----------------------------------------------------------------------
+FastAPI + WebSocket real-time ML inference server with batched prediction, model hot-reloading, A/B testing, health monitoring, and in-memory feature cache.
+
+----------------------------------------------------------------------
+TECH STACK
+----------------------------------------------------------------------
+  - fastapi
+  - uvicorn
+  - websockets
+  - scikit-learn
+  - numpy
+  - pydantic
+  - httpx
+  - pytest
+
+----------------------------------------------------------------------
+FEATURES
+----------------------------------------------------------------------
+  * WebSocket streaming predictions
+  * REST batch inference
+  * Model hot-reloading
+  * A/B testing
+  * Feature cache with TTL
+  * Health monitoring
+
+----------------------------------------------------------------------
+SAMPLE INPUT
+----------------------------------------------------------------------
+  Feature vectors
+
+  Example:
+    curl -X POST /predict -d '{"features": [1.2, 3.4, 5.6]}'
+
+----------------------------------------------------------------------
+SAMPLE OUTPUT
+----------------------------------------------------------------------
+  Predictions with metadata
+
+  Example:
+    {"prediction": 1, "probability": 0.87, "model": "v2"}
+
+----------------------------------------------------------------------
+PROJECT STRUCTURE
+----------------------------------------------------------------------
+  .gitignore
+  main.py
+  project-idea.json
+  pyproject.toml
+  README.md
+  requirements.txt
+  .github/workflows/test.yml
+  models/challenger_model.joblib
+  models/demo_model.joblib
+  src/ab_testing.py
+  src/batch_queue.py
+  src/cache.py
+  src/config.py
+  src/model_registry.py
+  src/monitoring.py
+  src/schemas.py
+  src/server.py
+  src/train.py
+  src/__init__.py
+  tests/conftest.py
+  tests/test_ab_testing.py
+  tests/test_cache.py
+  tests/test_model_registry.py
+  tests/test_monitoring.py
+  tests/test_server.py
+  tests/__init__.py
+
+----------------------------------------------------------------------
+TEST RESULTS
+----------------------------------------------------------------------
+  Status: PASSED
+  Tests Run: 31
+  Passed: 31
+  Failed: 0
+
+======================================================================
+  Author: Maharshi Soni  |  License: MIT
+======================================================================
