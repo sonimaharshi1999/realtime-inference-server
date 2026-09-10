@@ -1,5 +1,7 @@
 # Real-Time ML Inference Server
 
+![Tests](https://github.com/sonimaharshi1999/realtime-inference-server/actions/workflows/test.yml/badge.svg) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 A FastAPI + WebSocket-based real-time ML inference server with batched prediction, model hot-reloading, health monitoring, and an in-memory feature cache. Supports multiple model backends (scikit-learn, ONNX) with A/B testing capabilities.
 
 **Author:** Maharshi Soni | **License:** MIT
